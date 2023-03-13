@@ -2,5 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/register": "pages/register.js"
+  "/pokemon/[id]": "pages/pokemon/[id].js",
+  "/sets": "pages/sets.js",
+  "/sets/[set]": "pages/sets/[set].js",
+  "/": "pages/index.js"
 }
