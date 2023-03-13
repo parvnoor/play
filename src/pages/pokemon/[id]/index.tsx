@@ -17,8 +17,8 @@ interface Props {
 }
 
 interface Query extends ParsedUrlQuery {
-    sets: string;
-  }
+  sets: string;
+}
 
 const PokemonPage = ({ pokemon }: Props) => {
   const { name, hp, types, images, attacks, weaknesses } = pokemon;

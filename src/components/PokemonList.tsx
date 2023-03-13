@@ -17,12 +17,11 @@ export default function PokemonList({ pokemon }: { pokemon: Pokemon[] }) {
     <div>
       {pokemon.map((p) => (
         <Link key={p.id} href={`/pokemon/${p.id}`}>
-                <div >
-          <h3>{p.name}</h3>
-          <img src={p.images.small} alt={p.name} />
-        </div>
+          <div>
+            <h3>{p.name}</h3>
+            <img src={p.images.small} alt={p.name} />
+          </div>
         </Link>
-
       ))}
     </div>
   );

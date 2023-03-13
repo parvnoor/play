@@ -13,14 +13,13 @@ import { loginFunction } from "@/apis/auth";
 import { useRouter } from "next/router";
 import { LoginInterface, ISignupInterface } from "@/data/auth";
 
-
 export default function SignUp() {
   const {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
   } = useForm<ISignupInterface>();
-  const router = useRouter()
+  const router = useRouter();
   const onSubmit: SubmitHandler<LoginInterface> = async (data) => {
     try {
       await loginFunction(data);
@@ -35,14 +34,14 @@ export default function SignUp() {
       <Heading mb={6}>Sign Up</Heading>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Stack spacing={4}>
-          <FormControl isInvalid={errors.email}>
+          <FormControl>
             <FormLabel>Email</FormLabel>
             <Input {...register("email", { required: true })} type="email" />
             <FormErrorMessage>
               {errors.email && "Email is required"}
             </FormErrorMessage>
           </FormControl>
-          <FormControl isInvalid={errors.password}>
+          <FormControl>
             <FormLabel>Password</FormLabel>
             <Input
               {...register("password", { required: true, minLength: 6 })}

@@ -1,40 +1,36 @@
-export interface User {
-
-}
+export interface User {}
 
 export interface Access {
-    accessToken: string
-    expiresIn: number;
-    granted: boolean;
-    timestamp: number;
-    refreshToken: string;
+  accessToken: string;
+  expiresIn: number;
+  granted: boolean;
+  timestamp: number;
+  refreshToken: string;
 }
 
-
 export interface LoginInterface {
-    email: string;
-    username: string;
-    password: string;
+  email: string;
+  username: string;
+  password: string;
 }
 
 export interface ISignupInterface extends LoginInterface {
-    companyName: string;
+  companyName: string;
 }
 
-
 export interface authStore {
-    access?: Access;
-    user?: User;
+  access?: Access;
+  user?: User;
 }
 
 export interface PartialUpdate {
-    user: Partial<User>
+  user: Partial<User>;
 }
 
 export interface IAuthStore extends authStore {
-    setUser: (payload: User) => void
-    setAccess: (payload: Access) => void
-    Login: (payload: LoginInterface) => Promise<void>
-    Signup: (payload: ISignupInterface) => Promise<void>
-    logoutAccount: () => Promise<void>
+  setUser: (payload: User) => void;
+  setAccess: (payload: Access) => void;
+  Login: (payload: LoginInterface) => Promise<void>;
+  Signup: (payload: ISignupInterface) => Promise<void>;
+  logoutAccount: () => Promise<void>;
 }
